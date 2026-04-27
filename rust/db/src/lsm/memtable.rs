@@ -63,4 +63,8 @@ impl Memtable {
     pub fn size(&self) -> usize {
         self.size.load(Ordering::Relaxed)
     }
+
+    pub fn iter(&self) -> Vec<(Vec<u8>, Vec<u8>)> {
+        self.data.scan(&[], &vec![0xFF; 32])
+    }
 }

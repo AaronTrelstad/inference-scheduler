@@ -1,6 +1,7 @@
 use siphasher::sip::SipHasher13;
 use std::hash::{Hash, Hasher};
 
+#[derive(serde::Serialize, serde::Deserialize)]
 pub struct BloomFilter {
     bits: Vec<u8>,
     num_bits: usize,
