@@ -70,4 +70,15 @@ impl BlockPool {
     pub fn n_free(&self) -> usize {
         self.free_list.len()
     }
+
+    pub fn evict_lru(&mut self) -> Option<usize> {
+        let lru_idx = self.blocks
+            .iter()
+            .filter(|b| b.ref_count > 0)  
+            .min_by_key(|b| b.last_access)
+            .map(|b| b.block_idx)?;
+    
+        self.free(lru_idx);
+        Some(lru_idx)
+    }
 }
