@@ -3,6 +3,7 @@ use crate::rope::RoPE;
 use candle_core::{Result, Tensor};
 use candle_nn::{Linear, Module};
 
+#[derive(Clone)]
 pub struct KVCache {
     pub k: Tensor,
     pub v: Tensor,

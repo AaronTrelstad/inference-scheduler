@@ -4,3 +4,4 @@ pub mod rope;
 pub mod ffn;
 pub mod attention;
 pub mod block;
+pub mod model;
