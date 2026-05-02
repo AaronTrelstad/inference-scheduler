@@ -11,7 +11,7 @@ impl BlockTable {
             request_id,
             blocks: Vec::new(),
             n_tokens: 0,
-            block_size
+            block_size,
         }
     }
 
@@ -42,7 +42,7 @@ impl BlockTable {
         let logical = self.logical_block(pos);
         self.blocks.get(logical).copied()
     }
-    
+
     pub fn increment_tokens(&mut self) {
         self.n_tokens += 1;
     }

@@ -6,3 +6,5 @@ edition = "2024"
 [dependencies]
 candle-core  = { git = "https://github.com/huggingface/candle" }
 candle-nn    = { git = "https://github.com/huggingface/candle" }
+anyhow       = "1"
+
